@@ -11,19 +11,25 @@ public class Aluno extends Pessoa {
 	@Min(0)
 	@Max(10)
 	double notaFinal;
-	
+
 	public Aluno() {
-		
+
 	}
 
-	public Aluno(
-			@NotBlank String nome, @NotBlank String telefone, @NotBlank String nascimento
-			) {
+	public Aluno(@NotBlank String nome,
+			@NotBlank String telefone,
+			@NotBlank String nascimento,
+			double notaFinal) {
 		super(nome, telefone, nascimento);
-		
+		this.notaFinal = notaFinal;
 	}
 
-	
-	
-	
+	public double getNotaFinal() {
+		return notaFinal;
+	}
+
+	public void setNotaFinal(double notaFinal) {
+		this.notaFinal = notaFinal;
+	}
+
 }
