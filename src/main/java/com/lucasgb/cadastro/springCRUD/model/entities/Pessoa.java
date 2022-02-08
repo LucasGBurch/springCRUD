@@ -1,5 +1,7 @@
 package com.lucasgb.cadastro.springCRUD.model.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,13 +22,17 @@ public class Pessoa {
 	private String telefone;
 
 	@NotBlank
-	private String nascimento;
+	private Date nascimento;
+
+	private Date dataCadastro; // Estas datas não vão pro construtor (a princípio)
+
+	private Date ultimaAtualizacao;
 
 	public Pessoa() {
 
 	}
 
-	public Pessoa(@NotBlank String nome, @NotBlank String telefone, @NotBlank String nascimento) {
+	public Pessoa(@NotBlank String nome, @NotBlank String telefone, @NotBlank Date nascimento) {
 		super();
 		this.nome = nome;
 		this.telefone = telefone;
@@ -57,12 +63,28 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 
-	public String getNascimento() {
+	public Date getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(String nascimento) {
+	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
+	}
+
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public Date getUltimaAtualizacao() {
+		return ultimaAtualizacao;
+	}
+
+	public void setUltimaAtualizacao(Date ultimaAtualizacao) {
+		this.ultimaAtualizacao = ultimaAtualizacao;
 	}
 
 }

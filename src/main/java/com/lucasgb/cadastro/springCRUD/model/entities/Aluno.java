@@ -1,5 +1,7 @@
 package com.lucasgb.cadastro.springCRUD.model.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -18,7 +20,7 @@ public class Aluno extends Pessoa {
 
 	public Aluno(@NotBlank String nome,
 			@NotBlank String telefone,
-			@NotBlank String nascimento,
+			@NotBlank Date nascimento,
 			double notaFinal) {
 		super(nome, telefone, nascimento);
 		this.notaFinal = notaFinal;
