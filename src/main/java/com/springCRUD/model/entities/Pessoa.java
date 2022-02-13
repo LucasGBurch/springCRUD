@@ -1,4 +1,4 @@
-package com.springCRUD.models;
+package com.springCRUD.model.entities;
 
 import java.util.Date;
 
