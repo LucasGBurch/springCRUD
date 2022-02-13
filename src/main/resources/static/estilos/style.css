@@ -11,8 +11,73 @@ header {
 	background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
 	color: white;
 	text-align: center;
-	padding: 20px;
 	padding-top: 30px;
 	min-height: 150px;
 	min-width: 300px;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.466);
 }
+
+header p {
+	font-size: 1.5em;
+	font-variant: small-caps;
+}
+
+nav {
+	background-color: var(--cor1);
+	padding: 10px;
+	min-width: 300px;
+}
+
+nav > a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+nav > a:hover {
+	color: var(--cor1);
+	background-color: var(--cor3);
+	text-decoration: underline;
+	transition-duration: 0.8s;
+}
+
+main {
+	background-color: white;
+	margin: auto;
+	min-height: 400px;
+	min-width: 300px;
+	text-align: center;
+	padding: 10px 20px 0px 20px;
+}
+
+main h2 {
+	font-weight: bold;
+}
+
+main form {
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+
+footer {
+	background-color: var(--cor1);
+	min-width: 300px;
+	padding: 5px;
+	text-align: center;
+}
+
+footer > p, a {
+	text-decoration: none;
+	color: var(--cor3);
+	font-weight: bold;
+}
+
+footer > p > a:hover {
+	color: var(--cor1);
+	background-color: var(--cor3);
+	text-decoration: underline;
+	transition-duration: 0.8s;
+}
+
