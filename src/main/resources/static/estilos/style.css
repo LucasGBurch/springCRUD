@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+:root {
+	--cor1: #003554;
+	--cor2: #778899;
+	--cor3: #C0FDFB;
+}
+
+
+header {
+	background-image: linear-gradient(to bottom, var(--cor1), var(--cor2));
+	color: white;
+	text-align: center;
+	padding: 20px;
+	padding-top: 30px;
+	min-height: 150px;
+	min-width: 300px;
+}
