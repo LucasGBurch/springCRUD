@@ -12,7 +12,7 @@
 <body>
 	<header>
 		<h1>CRUD - Create Read Update Delete</h1>
-		<p>Página Inicial<p/>
+		<p>Cadastro de Pessoas<p/>
 	</header>
 	
 	<nav>
@@ -22,9 +22,30 @@
 	</nav>
 	
 	<main>
-	
+		<h2>Lista de Cadastro:</h2>
 		
-	
+
+		<table>
+			<thead>
+				<tr>
+				<!-- <th scope="col">Id</th> Vou esperar para testar Id (ver se é text etc...) -->
+					<th scope="col">Nome</th>
+					<th scope="col">Telefone</th>
+					<th scope="col">Nascimento</th>
+				</tr>
+			</thead>
+			
+			<tbody th:each="pessoa : ${pessoas}">
+				<tr>						
+					<!-- <th th:text="${pessoa.id}"></th>  -->
+					<td th:text="${pessoa.nome}"></td>
+					<td th:text="${pessoa.telefone}"></td>
+					<td th:text="${pessoa.nascimento}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
 	</main>
 	
 	<footer>

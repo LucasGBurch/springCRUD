@@ -22,19 +22,17 @@ public class Pessoa {
 	private String telefone;
 
 	@NotBlank
-	private Date nascimento;
+	private String nascimento;
 
-	@NotBlank
 	private Date cadastro;
 
-	@NotBlank
 	private Date alteracao;
 
 	public Pessoa() {
 
 	}
 
-	public Pessoa(@NotBlank String nome, @NotBlank String telefone, @NotBlank Date nascimento,
+	public Pessoa(@NotBlank String nome, @NotBlank String telefone, @NotBlank String nascimento,
 			@NotBlank Date cadastro, @NotBlank Date alteracao) {
 		super();
 		this.nome = nome;
@@ -68,11 +66,11 @@ public class Pessoa {
 		this.telefone = telefone;
 	}
 
-	public Date getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 

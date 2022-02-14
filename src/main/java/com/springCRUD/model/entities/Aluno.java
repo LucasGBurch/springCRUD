@@ -19,7 +19,7 @@ public class Aluno extends Pessoa {
 	}
 
 	public Aluno(@NotBlank String nome, @NotBlank String telefone,
-			@NotBlank Date nascimento, @NotBlank Date cadastro,
+			@NotBlank String nascimento, @NotBlank Date cadastro,
 			@NotBlank Date alteracao, @Min(0) @Max(10) double notaAluno) {
 		super(nome, telefone, nascimento, cadastro, alteracao);
 		this.notaAluno = notaAluno;
