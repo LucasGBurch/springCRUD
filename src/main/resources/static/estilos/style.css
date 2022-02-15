@@ -61,7 +61,7 @@ main form {
 	padding: 10px;
 }
 
-main table {
+table {
 	width: 500px;
     height: 100px;
     border-collapse: collapse; /*Padrão é separate*/
@@ -70,17 +70,17 @@ main table {
     margin: auto;
 }
 
-main td, th { /*th tem negrito (bold) e center por padrão*/
+td, th { /*th tem negrito (bold) e center por padrão*/
     border: 1px solid black;
     padding: 10px; /*espaça melhor as células*/
             
 }
 
-main thead {
+thead {
 	background-color: lightslategray;
 }
 
-main thead > tr > th { /*CABEÇALHO FIXO PARA TABELAS GRANDES: */
+thead > tr > th { /*CABEÇALHO FIXO PARA TABELAS GRANDES: */
     position: sticky;
     top: -2px;
     /*Colou na parte -2 (pra cobrir um espacinho do início da tabela)
@@ -88,13 +88,23 @@ main thead > tr > th { /*CABEÇALHO FIXO PARA TABELAS GRANDES: */
     background-color: lightslategray;
 }
 
-tbody > tr:nth-child(odd) { /*Efeito Zebrado nos dados*/
+tbody > tr:nth-child(even) { /*Efeito Zebrado nos dados*/
     background-color: lightgray;
-} /*NÃO FOI POSSÍVEL APLICAR NESTE PROJETO (ainda), POIS CADA LINHA FEITA
-NO FOR EACH FOI CONSIDERADA ÍMPAR!!!*/
+} /*funcionou ao transferir o t:each do tbody para o tr direto.*/
 
-tbody > tr:nth-child(even) {
+tbody > tr:nth-child(odd) {
     background-color: white;
+}
+
+tbody tr td a span {
+	color: black;
+}
+
+tbody tr td a span:hover { /*Até então pensava que o :hover só funcionaria com os <a>*/
+	color: var(--cor3);
+	background-color: var(--cor1);
+	text-decoration: underline;
+	transition-duration: 0.8s;
 }
 
 footer {

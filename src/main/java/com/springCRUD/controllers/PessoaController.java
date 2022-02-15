@@ -2,6 +2,7 @@ package com.springCRUD.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,6 +35,14 @@ public class PessoaController {
 		
 		mv.addObject("pessoas", pessoas);
 		
+		return mv;
+	}
+	
+	@RequestMapping("/{id}") // Vai mostrar a página do Id (colocado nos nomes da lista)
+	public ModelAndView detalhesPessoa(@PathVariable("id") Long id) {
+		Pessoa pessoa = pr.findById(id);
+		ModelAndView mv = new ModelAndView("pessoa/detalhesPessoa");
+		mv.addObject("pessoa", pessoa);
 		return mv;
 	}
 }

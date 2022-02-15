@@ -6,6 +6,8 @@ import com.springCRUD.model.entities.Pessoa;
 
 public interface PessoaRepository
 		extends PagingAndSortingRepository<Pessoa, Integer> {
+	
+	public Pessoa findById(Long id);
 
 	public Iterable<Pessoa> findByNomeContainingIgnoreCase(String parteNome);
 }	// Esse método funciona só ao declarar na interface por já existir na documentação do SpringBoot

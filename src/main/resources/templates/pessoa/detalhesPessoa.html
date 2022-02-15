@@ -22,32 +22,36 @@
 	</nav>
 	
 	<main>
-		<h2>Lista de Cadastro:</h2>
+		<h2>Informações da Pessoa Selecionada:</h2>
 		
-
 		<table>
+		
 			<thead>
-				<tr>
-					<th scope="col">Id</th>
-					<th scope="col">Nome</th>
-					<th scope="col">Telefone</th>
-					<th scope="col">Nascimento</th>
-				</tr>
+				
 			</thead>
 			
-			<tbody> <!-- zebrado funcionou descendo o th:each do <tbody> para o <tr> -->
-				<tr th:each="pessoa : ${pessoas}">						
-					<td th:text="${pessoa.id}"></td>
-					
-					<td><a th:href= "${(#mvc.url('PC#detalhesPessoa').arg(0, pessoa.id)).build()}">
-					<span th:text="${pessoa.nome}"></span></a></td>
-					
-					<td th:text="${pessoa.telefone}"></td>
-					<td th:text="${pessoa.nascimento}"></td>
+			<tbody th:each="pessoa : ${pessoa}"> 
+			<!-- zebrado funcionou descendo o th:each do <tbody> para o <tr>
+			em detalhes não é preciso,
+			pois uma pessoa não tem informações para tabela grande -->
+				<tr>	
+					<td><strong>Id</strong></td>					
+					<td><span th:text="${pessoa.id}"></span></td>
+				</tr>
+				<tr>	
+					<td><strong>Nome</strong></td>					
+					<td><span th:text="${pessoa.nome}"></span></td>
+				</tr>
+				<tr>	
+					<td><strong>Telefone</strong></td>					
+					<td><span th:text="${pessoa.telefone}"></span></td>
+				</tr>
+				<tr>	
+					<td><strong>Nascimento</strong></td>					
+					<td><span th:text="${pessoa.nascimento}"></span></td>
 				</tr>
 			</tbody>
 		</table>
-
 		
 	</main>
 	
