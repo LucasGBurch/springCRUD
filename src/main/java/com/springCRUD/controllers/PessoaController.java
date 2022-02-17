@@ -1,5 +1,7 @@
 package com.springCRUD.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,29 +17,29 @@ public class PessoaController {
 
 	@Autowired
 	private PessoaRepository pr;
-	
-	@RequestMapping(value="/cadastro", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public String form() {
 		return "pessoa/formPessoa";
 	}
-	
-	@RequestMapping(value="/cadastro", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/cadastro", method = RequestMethod.POST) // CREATE
 	public String form(Pessoa pessoa) {
-		
+
 		pr.save(pessoa);
-		return "redirect:/cadastro";
+		return "redirect:/lista";
 	}
-	
-	@RequestMapping("/lista")
+
+	@RequestMapping("/lista") // READ
 	public ModelAndView listaPessoas() {
 		ModelAndView mv = new ModelAndView("pessoa/listaPessoa");
 		Iterable<Pessoa> pessoas = pr.findAll();
-		
+
 		mv.addObject("pessoas", pessoas);
-		
+
 		return mv;
 	}
-	
+
 	@RequestMapping("/{id}") // Vai mostrar a página do Id (colocado nos nomes da lista)
 	public ModelAndView detalhesPessoa(@PathVariable("id") Long id) {
 		Pessoa pessoa = pr.findById(id);
@@ -45,4 +47,5 @@ public class PessoaController {
 		mv.addObject("pessoa", pessoa);
 		return mv;
 	}
+
 }
